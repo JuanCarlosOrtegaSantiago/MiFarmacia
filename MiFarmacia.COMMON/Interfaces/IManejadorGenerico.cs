@@ -5,11 +5,12 @@ using System.Text;
 
 namespace MiFarmacia.COMMON.Interfaces
 {
-    public interface IRepositorio<T> where T:Base
+    public interface IManejadorGenerico<T> where T:Base
     {
-        bool Crear(T entidad);
-        bool Editar(T EntidadModificada); //Checar
+        bool agregar(T entidad);
+        List<T> Listar { get; }
         bool Eliminar(string id);
-        List<T> Leer { get; }
+        bool Modificar(T entidad);
+        T BuscarPorId(string id);
     }
 }

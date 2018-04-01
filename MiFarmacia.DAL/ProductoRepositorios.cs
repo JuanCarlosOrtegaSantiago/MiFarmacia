@@ -1,41 +1,38 @@
-﻿using LiteDB;
-using MiFarmacia.COMMON.Entidades;
-using MiFarmacia.COMMON.Interfaces;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using LiteDB;
+using MiFarmacia.COMMON.Entidades;
+using MiFarmacia.COMMON.Interfaces;
 
 namespace MiFarmacia.DAL
 {
-    public class EmpleadoRepositorio : IRepositorio<Empleado>
+    public class ProductoRepositorios : IRepositorio<Productos>
     {
         private string DBName = "MiFarmacia.db";
-        private string TableName = "Empleados";
-
-
-        public List<Empleado> Leer {
-
+        private string TableName = "Productos";
+        public List<Productos> Leer
+        {
             get
             {
-                List<Empleado> dato = new List<Empleado>();
-                using (var db=new LiteDatabase(DBName))
+                List<Productos> dato = new List<Productos>();
+                using (var db = new LiteDatabase(DBName))
                 {
-                    dato = db.GetCollection<Empleado>(TableName).FindAll().ToList();
+                    dato = db.GetCollection<Productos>(TableName).FindAll().ToList();
                 }
                 return dato;
             }
-
         }
 
-        public bool Crear(Empleado entidad)
+        public bool Crear(Productos entidad)
         {
             entidad.Id = Guid.NewGuid().ToString();
             try
             {
                 using (var db = new LiteDatabase(DBName))
                 {
-                    var coleccion = db.GetCollection<Empleado>(TableName);
+                    var coleccion = db.GetCollection<Productos>(TableName);
                     coleccion.Insert(entidad);
                 }
                 return true;
@@ -43,17 +40,17 @@ namespace MiFarmacia.DAL
             catch (Exception)
             {
                 return false;
-                
+
             }
         }
 
-        public bool Editar(Empleado EntidadModificada)
+        public bool Editar(Productos EntidadModificada)
         {
             try
             {
                 using (var db = new LiteDatabase(DBName))
                 {
-                    var coleccion = db.GetCollection<Empleado>(TableName);
+                    var coleccion = db.GetCollection<Productos>(TableName);
                     coleccion.Update(EntidadModificada);
                 }
                 return true;
@@ -72,10 +69,10 @@ namespace MiFarmacia.DAL
                 int r;
                 using (var db = new LiteDatabase(DBName))
                 {
-                    var coleccion = db.GetCollection<Empleado>(TableName);
+                    var coleccion = db.GetCollection<Productos>(TableName);
                     r = coleccion.Delete(e => e.Id == id);
                 }
-                return r>0;
+                return r > 0;
             }
             catch (Exception)
             {

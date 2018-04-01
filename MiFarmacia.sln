@@ -5,7 +5,11 @@ VisualStudioVersion = 15.0.27428.2015
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MiFarmacia.COMMON", "MiFarmacia.COMMON\MiFarmacia.COMMON.csproj", "{E38751E6-624A-4419-B1E2-04A7FBA3C86C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiFarmacia.DAL", "MiFarmacia.DAL\MiFarmacia.DAL.csproj", "{0FC9FDFB-D8EE-4E1F-89F7-409986D9DE16}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MiFarmacia.DAL", "MiFarmacia.DAL\MiFarmacia.DAL.csproj", "{0FC9FDFB-D8EE-4E1F-89F7-409986D9DE16}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiFarmacia.BIZ", "MiFarmacia.BIZ\MiFarmacia.BIZ.csproj", "{4E254E2D-51BB-4D2B-ADF0-5E59E487F8AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiFarmacia.GUI.Escritorio.Administrador", "MiFarmacia.GUI.Escritorio.Administrador\MiFarmacia.GUI.Escritorio.Administrador.csproj", "{FDE7A41A-07C6-470C-9EEE-4B208A67F75C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{0FC9FDFB-D8EE-4E1F-89F7-409986D9DE16}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0FC9FDFB-D8EE-4E1F-89F7-409986D9DE16}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0FC9FDFB-D8EE-4E1F-89F7-409986D9DE16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E254E2D-51BB-4D2B-ADF0-5E59E487F8AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E254E2D-51BB-4D2B-ADF0-5E59E487F8AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E254E2D-51BB-4D2B-ADF0-5E59E487F8AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E254E2D-51BB-4D2B-ADF0-5E59E487F8AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDE7A41A-07C6-470C-9EEE-4B208A67F75C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDE7A41A-07C6-470C-9EEE-4B208A67F75C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDE7A41A-07C6-470C-9EEE-4B208A67F75C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDE7A41A-07C6-470C-9EEE-4B208A67F75C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

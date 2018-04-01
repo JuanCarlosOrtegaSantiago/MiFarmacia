@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MiFarmacia.COMMON\MiFarmacia.COMMON.csproj" />
+    <ProjectReference Include="..\MiFarmacia.DAL\MiFarmacia.DAL.csproj" />
+  </ItemGroup>
+
+</Project>
