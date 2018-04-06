@@ -23,6 +23,15 @@ namespace MiFarmacia.GUI.Escritorio.Administrador
         public MainWindow()
         {
             InitializeComponent();
+
+        }
+
+        private void btnReguistros_Click(object sender, RoutedEventArgs e)
+        {
+            VentanaIngreso pagina = new VentanaIngreso();
+            pagina.Show();
+            this.Close();
+
         }
     }
 }

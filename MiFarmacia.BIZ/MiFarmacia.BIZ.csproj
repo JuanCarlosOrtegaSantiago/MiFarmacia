@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="LiteDB" Version="4.1.2" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\MiFarmacia.COMMON\MiFarmacia.COMMON.csproj" />
     <ProjectReference Include="..\MiFarmacia.DAL\MiFarmacia.DAL.csproj" />
   </ItemGroup>
