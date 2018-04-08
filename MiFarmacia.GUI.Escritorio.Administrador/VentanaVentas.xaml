@@ -1,0 +1,27 @@
+﻿<Window x:Class="MiFarmacia.GUI.Escritorio.Administrador.VentanaVentas"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MiFarmacia.GUI.Escritorio.Administrador"
+        mc:Ignorable="d"
+        Title="Menu" Height="350" Width="550">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="1" FontWeight="Heavy" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center">Mi Querido Enfermito</Label>
+        <StackPanel Orientation="Horizontal" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Image Source="enfermito.jpg" Height="300" Width="400" ></Image>
+            <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="3">
+                <Button x:Name="btnReguistroDeVentas"  Width="80" Margin="30,5" Height="30">Historial de ventas</Button>
+                <Button x:Name="btnNuevaVenta" Click="btnNuevaVenta_Click" Width="80" Margin="30,5" Height="30">Nueva Venta</Button>
+                <Button x:Name="btnRegresar" Click="btnRegresar_Click" Width="80" Margin="30,5" Height="30">Regresar</Button>
+            </StackPanel>
+        </StackPanel>
+        
+    </Grid>
+</Window>

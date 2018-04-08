@@ -14,5 +14,10 @@ namespace MiFarmacia.COMMON.Entidades
         public float PrecioCompra { get; set; }
         public float PrecioVenta { get; set; }
 
+        public override string ToString()
+        {
+            return string.Format("{0}-{1}",categoria , nombreDelProducto);
+        }
+
     }
 }

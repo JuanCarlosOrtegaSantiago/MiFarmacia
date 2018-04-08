@@ -10,39 +10,31 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace MiFarmacia.GUI.Escritorio.Administrador
 {
     /// <summary>
-    /// Lógica de interacción para MainWindow.xaml
+    /// Lógica de interacción para VentanaVentas.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class VentanaVentas : Window
     {
-        public MainWindow()
+        public VentanaVentas()
         {
             InitializeComponent();
-
         }
 
-        private void btnReguistros_Click(object sender, RoutedEventArgs e)
+        private void btnRegresar_Click(object sender, RoutedEventArgs e)
         {
-            VentanaIngreso pagina = new VentanaIngreso();
-            pagina.Show();
-            this.Close();
-
-        }
-
-        private void btnVentas_Click(object sender, RoutedEventArgs e)
-        {
-            VentanaVentas pagina = new VentanaVentas();
+            MainWindow pagina = new MainWindow();
             pagina.Show();
             this.Close();
         }
 
-        private void btnSalir_Click(object sender, RoutedEventArgs e)
+        private void btnNuevaVenta_Click(object sender, RoutedEventArgs e)
         {
+            VentanaNuevaVenta pagina = new VentanaNuevaVenta();
+            pagina.Show();
             this.Close();
         }
     }

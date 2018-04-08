@@ -8,6 +8,9 @@ namespace MiFarmacia.COMMON.Entidades
     {
         public string Correo { get; set; }
         public string RFC { get; set; }
-
+        public override string ToString()
+        {
+            return string.Format("{0}", nombre);
+        }
     }
 }

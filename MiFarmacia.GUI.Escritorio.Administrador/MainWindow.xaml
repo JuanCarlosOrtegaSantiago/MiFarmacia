@@ -21,7 +21,8 @@
         </StackPanel>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="3">
             <Button x:Name="btnReguistros" Click="btnReguistros_Click" Width="80" Margin="30,5" Height="30">Reguistros</Button>
-            <Button x:Name="btnVentas" Width="80" Margin="30,5" Height="30">Venta</Button>
+            <Button x:Name="btnVentas" Click="btnVentas_Click" Width="80" Margin="30,5" Height="30">Venta</Button>
+            <Button x:Name="btnSalir" Click="btnSalir_Click" Width="80" Margin="30,5" Height="30">Salir</Button>
         </StackPanel>
     </Grid>
 </Window>

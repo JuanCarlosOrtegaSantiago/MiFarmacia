@@ -60,11 +60,14 @@
     <Compile Include="VentanaIngreso.xaml.cs">
       <DependentUpon>VentanaIngreso.xaml</DependentUpon>
     </Compile>
+    <Compile Include="VentanaNuevaVenta.xaml.cs">
+      <DependentUpon>VentanaNuevaVenta.xaml</DependentUpon>
+    </Compile>
     <Compile Include="VentanaTablas.xaml.cs">
       <DependentUpon>VentanaTablas.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Ventas.xaml.cs">
-      <DependentUpon>Ventas.xaml</DependentUpon>
+    <Compile Include="VentanaVentas.xaml.cs">
+      <DependentUpon>VentanaVentas.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -82,11 +85,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="VentanaNuevaVenta.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="VentanaTablas.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Ventas.xaml">
+    <Page Include="VentanaVentas.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

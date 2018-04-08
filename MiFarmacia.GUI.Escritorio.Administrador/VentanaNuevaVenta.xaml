@@ -1,0 +1,67 @@
+﻿<Window x:Class="MiFarmacia.GUI.Escritorio.Administrador.VentanaNuevaVenta"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MiFarmacia.GUI.Escritorio.Administrador"
+        mc:Ignorable="d"
+        Title="Nueva venta" Height="450" Width="850">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Orientation="Horizontal"  VerticalAlignment="Center" Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="2" >
+            <Image Source="enfermitico.jpg" Height="200" Width="200" Margin="10,0"></Image>
+            <Label VerticalAlignment="Center" FontSize="20" FontWeight="DemiBold" Foreground="Aqua">Nuevo punto de venta</Label>
+            <Button x:Name="btnRegresar" Click="btnRegresar_Click" Margin="20" Height="35" Width="100">Regresar</Button>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3" Grid.Column="1">
+            <Label FontSize="15">* Empleado:</Label>
+            <ComboBox x:Name="cmbxEmpleado" Width="200"></ComboBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3" Grid.Column="2" >
+            <Label FontSize="15">* Cliente:</Label>
+            <ComboBox x:Name="cmbxCliente" Width="200" ></ComboBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" Grid.Column="1">
+            <Label FontSize="15">* Producto:</Label>
+            <ComboBox x:Name="cmbxProducto" Width="200" ></ComboBox>
+            <Button x:Name="btnAgregarProducto" Click="btnAgregarProducto_Click" Width="20">+</Button>
+            <Button x:Name="btnQuitarProducto" Click="btnQuitarProducto_Click" Width="20">-</Button>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" Grid.Column="2" >
+            <Label FontSize="15">* Cantidad:</Label>
+            <TextBox x:Name="tbxCantidadDelProducto" Width="200"></TextBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="5" Grid.Column="2" >
+            <Label FontSize="15">Total a pagar:</Label>
+            <TextBlock Width="100" x:Name="txblkTotalAPagar"></TextBlock>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="6" Grid.Column="1"  Grid.ColumnSpan="2">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="6" Grid.Column="1" Margin="20,0">
+                <Button x:Name="btnNuevaVenta" Click="btnNuevaVenta_Click" Width="100" Height="35" FontSize="15" >Nueva Venta</Button>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="6" Grid.Column="2" Margin="20,0">
+                <Button x:Name="btnAceptarVenta" Width="100" Height="35" FontSize="15" >Aceptar</Button>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="6" Grid.Column="2" Margin="20,0">
+                <Button x:Name="btnCancelarVenta" Click="btnCancelarVenta_Click" Width="100" Height="35" FontSize="15" >Cancelar</Button>
+            </StackPanel>
+        </StackPanel>
+        <DataGrid x:Name="dtgProductos" IsReadOnly="True" Grid.Row="1" Grid.RowSpan="6" Grid.Column="3" Width="200"></DataGrid>
+    </Grid>
+</Window>
