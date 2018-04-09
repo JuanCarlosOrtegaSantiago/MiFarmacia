@@ -25,6 +25,7 @@ namespace MiFarmacia.GUI.Escritorio.Administrador
         ManejadorEmpleados manejadorEmpleados;
         ManejadorClientes manejadorClientes;
         ManejadorProductos manejadorProductos;
+        ManejadorTiked manejadorTiked;
 
         Tiked tiked;
         float suma;
@@ -41,6 +42,7 @@ namespace MiFarmacia.GUI.Escritorio.Administrador
             manejadorEmpleados = new ManejadorEmpleados(new EmpleadoRepositorio());
             manejadorClientes = new ManejadorClientes(new ClienteRepositorio());
             manejadorProductos = new ManejadorProductos(new ProductoRepositorios());
+            manejadorTiked = new ManejadorTiked(new TikedRepositorio());
 
             HabiltarBotones(false);
             HabilitarCajasYCombos(false);
@@ -195,6 +197,39 @@ namespace MiFarmacia.GUI.Escritorio.Administrador
                 catch (Exception ex)
                 {
                     MessageBox.Show("" + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
+            }
+        }
+
+        private void btnAceptarVenta_Click(object sender, RoutedEventArgs e)
+        {
+            if (accionvale == accion.nuevo)
+            {
+                if (cmbxCliente.SelectedItem != null)
+                {
+                    tiked.Comprador = cmbxCliente.SelectedItem as Cliente;
+                }
+                else
+                {
+                    MessageBox.Show("No has seleccionado el cliente", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
+                if (cmbxEmpleado.SelectedItem != null)
+                {
+                    tiked.Vendedor = cmbxEmpleado.SelectedItem as Empleado;
+                }
+                else
+                {
+                    MessageBox.Show("No has seleccionado el empleado", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
+                tiked.FechaHoaCompra = DateTime.Now;
+                tiked.TotalDeLaVenta = suma;
+                if (manejadorTiked.agregar(tiked))
+                {
+                    MessageBox.Show("Venta Guardada Correctamente", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    HabiltarBotones(false);
+                    HabilitarCajasYCombos(false);
+                    LimparCajas();
+                    ActualizarCombos();
                 }
             }
         }

@@ -37,5 +37,12 @@ namespace MiFarmacia.GUI.Escritorio.Administrador
             pagina.Show();
             this.Close();
         }
+
+        private void btnReguistroDeVentas_Click(object sender, RoutedEventArgs e)
+        {
+            VEntanaReguistroDeVales pagina = new VEntanaReguistroDeVales();
+            pagina.Show();
+            this.Close();
+        }
     }
 }

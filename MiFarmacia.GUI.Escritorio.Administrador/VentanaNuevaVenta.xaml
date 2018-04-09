@@ -56,7 +56,7 @@
                 <Button x:Name="btnNuevaVenta" Click="btnNuevaVenta_Click" Width="100" Height="35" FontSize="15" >Nueva Venta</Button>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="6" Grid.Column="2" Margin="20,0">
-                <Button x:Name="btnAceptarVenta" Width="100" Height="35" FontSize="15" >Aceptar</Button>
+                <Button x:Name="btnAceptarVenta" Click="btnAceptarVenta_Click" Width="100" Height="35" FontSize="15" >Aceptar</Button>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="6" Grid.Column="2" Margin="20,0">
                 <Button x:Name="btnCancelarVenta" Click="btnCancelarVenta_Click" Width="100" Height="35" FontSize="15" >Cancelar</Button>

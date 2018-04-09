@@ -10,6 +10,6 @@ namespace MiFarmacia.COMMON.Entidades
         public List<Productos> ProductosComprados { get; set;  }
         public Empleado Vendedor { get; set; }
         public Cliente Comprador { get; set; }
-
+        public float TotalDeLaVenta { get; set; }
     }
 }
