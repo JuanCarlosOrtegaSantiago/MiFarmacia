@@ -37,15 +37,15 @@
             <Label FontSize="15">* Cliente:</Label>
             <ComboBox x:Name="cmbxCliente" Width="200" ></ComboBox>
         </StackPanel>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" Grid.Column="1">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" Grid.Column="1" >
+            <Label FontSize="15">* Cantidad:</Label>
+            <TextBox x:Name="tbxCantidadDelProducto" Width="200"></TextBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" Grid.Column="2">
             <Label FontSize="15">* Producto:</Label>
             <ComboBox x:Name="cmbxProducto" Width="200" ></ComboBox>
             <Button x:Name="btnAgregarProducto" Click="btnAgregarProducto_Click" Width="20">+</Button>
             <Button x:Name="btnQuitarProducto" Click="btnQuitarProducto_Click" Width="20">-</Button>
-        </StackPanel>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" Grid.Column="2" >
-            <Label FontSize="15">* Cantidad:</Label>
-            <TextBox x:Name="tbxCantidadDelProducto" Width="200"></TextBox>
         </StackPanel>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="5" Grid.Column="2" >
             <Label FontSize="15">Total a pagar:</Label>
@@ -62,6 +62,6 @@
                 <Button x:Name="btnCancelarVenta" Click="btnCancelarVenta_Click" Width="100" Height="35" FontSize="15" >Cancelar</Button>
             </StackPanel>
         </StackPanel>
-        <DataGrid x:Name="dtgProductos" IsReadOnly="True" Grid.Row="1" Grid.RowSpan="6" Grid.Column="3" Width="200"></DataGrid>
+        <DataGrid x:Name="dtgProductos" IsReadOnly="True" Grid.Row="1" Grid.RowSpan="6" Grid.Column="3"></DataGrid>
     </Grid>
 </Window>

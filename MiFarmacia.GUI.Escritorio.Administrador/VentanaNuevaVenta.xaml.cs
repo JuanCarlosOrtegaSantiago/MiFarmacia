@@ -28,6 +28,12 @@ namespace MiFarmacia.GUI.Escritorio.Administrador
 
         Tiked tiked;
         float suma;
+        enum accion
+        {
+            nuevo
+        }
+
+        accion accionvale;
 
         public VentanaNuevaVenta()
         {
@@ -100,6 +106,7 @@ namespace MiFarmacia.GUI.Escritorio.Administrador
             tiked.ProductosComprados = new List<Productos>();
             ActulizarTablaDeProductosAhComprar();
             suma = 0;
+            accionvale = accion.nuevo;
         }
 
         private void ActulizarTablaDeProductosAhComprar()
@@ -118,41 +125,50 @@ namespace MiFarmacia.GUI.Escritorio.Administrador
 
         private void btnAgregarProducto_Click(object sender, RoutedEventArgs e)
         {
-
-            Productos productos = cmbxProducto.SelectedItem as Productos;
-            if (productos != null)
+            if (string.IsNullOrWhiteSpace(tbxCantidadDelProducto.Text))
             {
-                try
+                MessageBox.Show("Te ha faltado ingresar la cantidad", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                tbxCantidadDelProducto.Clear();
+            }
+            else
+            {
+                Productos productos = cmbxProducto.SelectedItem as Productos;
+                if (productos != null)
                 {
-                    float venta = 0;
-                    int cantidad = int.Parse(tbxCantidadDelProducto.Text);
-                    int stok = productos.cantidad;
-                    if (stok == 0)
+                    try
                     {
-                        MessageBox.Show("Error no hay articulos en existencia", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                    }
-                    else
-                    {
-                        if (cantidad > stok)
+                        float venta = 0;
+                        int cantidad = int.Parse(tbxCantidadDelProducto.Text);
+                        int stok = productos.cantidad;
+                        if (stok == 0)
                         {
-                            MessageBox.Show("Error no hay suficientes articulos en existencia", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                            MessageBox.Show("Error no hay articulos en existencia", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                         }
                         else
                         {
-                            venta = productos.PrecioVenta * cantidad;
-                            productos.cantidad = stok - cantidad;
-                            tiked.ProductosComprados.Add(productos);
-                            ActulizarTablaDeProductosAhComprar();
-                            suma += venta;
-                            txblkTotalAPagar.Text = suma.ToString();
+                            if (cantidad > stok)
+                            {
+                                MessageBox.Show("Error no hay suficientes articulos en existencia", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                            }
+                            else
+                            {
+                                venta = productos.PrecioVenta * cantidad;
+                                productos.cantidad = cantidad;
+                                tiked.ProductosComprados.Add(productos);
+                                ActulizarTablaDeProductosAhComprar();
+                                suma += venta;
+                                txblkTotalAPagar.Text = suma.ToString();
+                                productos.cantidad = stok - cantidad;
+                            }
                         }
-                    }
 
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("" + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(""+ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
-                }
+            
 
             }
             
@@ -160,7 +176,27 @@ namespace MiFarmacia.GUI.Escritorio.Administrador
 
         private void btnQuitarProducto_Click(object sender, RoutedEventArgs e)
         {
+            Productos productos = dtgProductos.SelectedItem as Productos;
+            if (productos != null)
+            {
+                try
+                {
+                    float venta = 0;
+                    //int cantidad = int.Parse(tbxCantidadDelProducto.Text);
+                    int stok = productos.cantidad;
 
+                        venta = productos.PrecioVenta * stok;
+                        
+                        tiked.ProductosComprados.Remove(productos);
+                        ActulizarTablaDeProductosAhComprar();
+                        suma -= venta;
+                        txblkTotalAPagar.Text = suma.ToString();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("" + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
+            }
         }
     }
 }
